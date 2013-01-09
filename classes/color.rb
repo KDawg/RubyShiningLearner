@@ -7,32 +7,37 @@ class Color
     # @ symbol makes this a class instance variable
     @name = name
     @count = count
+  end
+
+  def say_name
     print "my name is[#{@name}]"
   end
 
-  def showValues
+  def show_values
     values = {
-      'count' => @count,
-      'name' => @name,
-      'customer' => 'Harrison Ford'
+      count => @count,
+      name => @name,
+      customer => 'Harrison Ford'
     }
     print values
   end
 
 end
 
-colorOptions = ['red', 'green', 'blue']
-colorOptions.each do |color|
+
+color_options = ['red', 'green', 'blue']
+color_options.each do |color|
   puts "color option[#{color}]"
 end
 
-theColor = Color.new("pale green")
+the_color = Color.new("pale green")
+the_color.say_name
 
 if not ARGV.empty?
   puts ARGV
   puts ARGV.length
 end
 
-theColor.showValues
+the_color.show_values
 
 puts "EOT"
