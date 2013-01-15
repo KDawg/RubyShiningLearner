@@ -1,0 +1,16 @@
+<h1>Friends</h1>
+<p>Find me in app/views/friends/list.html.erb</p>
+<ul>
+  <li>Mark</li>
+  <li>Julie</li>
+  <li>Mahdad</li>
+</ul>
+<h3>TimeStamp</h3>
+<p>Page rendered at <%= @cur_time %></p>
+
+<h3>Actions</h3>
+<ul>
+  <li><a href="/friends/add">Add</a></li>
+  <li><%= link_to "List", friends_list_path, :id => "list_friends", :class => "friends_action" %></li>
+  <li><a href="/friends/remove">Remove</a></li>
+</ul>

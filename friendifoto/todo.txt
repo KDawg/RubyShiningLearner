@@ -1,0 +1,8 @@
+
+
+
+=> rails server
+=> rails generate conntroller Friends add list
+    - http://localhost:3000/friends/list
+=> rails generate model Friend
+=> rake about

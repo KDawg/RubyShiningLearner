@@ -1,11 +1,14 @@
 
 # Run like this > ruby color.rb red yellow green
 
+DEFAULT_CUSTOMER_NAME = 'Harrison Ford'   # constant
+
+
 class Color
 
-  attr_reader :name, :count
+  attr_reader :name, :count     # expose public get interfaces
 
-  def name=(new_name)
+  def name=(new_name)           # expose public set interface
     @name = new_name
   end
 
@@ -16,21 +19,32 @@ class Color
   end
 
   def say_name
-    print "my name is [#{@name}]" if @name != nil
+    puts compute_name
+  end
+
+  def compute_name
+    return "my name is [#{@name}]" if @name != nil
   end
 
   def show_values
     values = {
-      'count' => @count,
-      'name' => @name,
-      'customer' => 'Harrison Ford'
+      :count => @count,
+      :name => @name
     }
-    print values
+    values[:customer] = DEFAULT_CUSTOMER_NAME
+    puts values
   end
 
   public :name, :initialize, :say_name, :show_values
+  protected :compute_name
 
 end
+
+
+=begin
+  This is a long comment block
+  extending as many lines as I want it to
+=end
 
 
 color_options = ['red', 'green', 'blue', 42.1234]
@@ -48,6 +62,8 @@ puts the_color.name
 if not ARGV.empty?
   puts ARGV
   puts ARGV.length
+else
+  puts "Usage: color value1 value2 ... valueN"
 end
 
 the_color.show_values
